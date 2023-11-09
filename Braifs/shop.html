@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horologix</title>
+    <style>
+        :root {
+            --color-pr: #27374D;
+            --color-ma: #526D82;
+            --color-3: #9DB2BF;
+            --color-4: #DDE6ED;
+        }
+        .slide-div {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <img src="img/Screenshot_2023-11-08_105712.png" alt="">
+        <ul>
+            <a href="index.html"><li>Home</li></a>
+            <a href="about.html"><li>About us</li></a>
+            <a href="shop.html"><li>Shop</li></a>
+            <a href="contact.html"><li>Contact</li></a>
+            <a href="login.html"><li>Login</li></a>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Start Section One -->
+    <section class="section-one-shop">
+        <div class="text-B-B">
+            <h1>SHOP</h1>
+            <h3>SHOP</h3>
+        </div>
+        <div class="container-section-one">
+            <div class="slide-div">
+                <form class="fm1">
+                    <input type="text" id="search">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <div class="container">
+                    <form class="range">
+                        <div class="form-group range__slider">
+                            <input type="range" step="500">
+                        </div>
+                        <div class="form-group range__value">
+                            <label>Loan Amount</label>
+                            <span></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="frm-cont">
+                    <form class="frm2">
+                        <input type="checkbox">
+                        <label for="input">Man</label>
+                    </form>
+                    <form class="frm2">
+                        <input type="checkbox">
+                        <label for="input">Women</label>
+                    </form>
+                    <form class="frm2">
+                        <input type="checkbox">
+                        <label for="input">Kids</label>
+                    </form>
+                </div>
+            </div>
+            <div class="container-card">
+                <div class="card">
+                    <img src="img/Rolex-Watch-PNG-Free-Image-2444622074.png" alt="Watch">
+                    <div class="cont-text-card">
+                        <h3 id="watch">Watch Rolex</h4>
+                        <h3>100$</h3>
+                    </div>
+                    <a href="#">View</a>
+                </div>
+                <div class="card">
+                    <img src="img/Rolex-Watch-PNG-Free-Image-2444622074.png" alt="Watch">
+                    <div class="cont-text-card">
+                        <h3 id="watch">Watch Casio</h4>
+                        <h3>100$</h3>
+                    </div>
+                    <a href="#">View</a>
+                </div>
+                <div class="card">
+                    <img src="img/Rolex-Watch-PNG-Free-Image-2444622074.png" alt="Watch">
+                    <div class="cont-text-card">
+                        <h3 id="watch">Watch Omega</h4>
+                        <h3>100$</h3>
+                    </div>
+                    <a href="#">View</a>
+                </div>
+                <div class="card">
+                    <img src="img/Rolex-Watch-PNG-Free-Image-2444622074.png" alt="Watch">
+                    <div class="cont-text-card">
+                        <h3 id="watch">Watch Omega</h4>
+                        <h3>100$</h3>
+                    </div>
+                    <a href="#">View</a>
+                </div>
+                <div class="card">
+                    <img src="img/Rolex-Watch-PNG-Free-Image-2444622074.png" alt="Watch">
+                    <div class="cont-text-card">
+                        <h3 id="watch">Watch Casio</h4>
+                        <h3>100$</h3>
+                    </div>
+                    <a href="#">View</a>
+                </div>
+                <div class="card">
+                    <img src="img/Rolex-Watch-PNG-Free-Image-2444622074.png" alt="Watch">
+                    <div class="cont-text-card">
+                        <h3 id="watch">Watch Mac</h4>
+                        <h3>100$</h3>
+                    </div>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Section One -->
+    <script>
+        const search = document.getElementById('search');
+        const allCards = document.querySelectorAll('.card');
+        const container = document.querySelector('.container-card');
+        
+        search.addEventListener('input', () => {
+            const searchText = search.value.toLowerCase();
+        
+            allCards.forEach(card => {
+                const cardTitle = card.querySelector('h3#watch').textContent.toLowerCase();
+        
+                if (cardTitle.includes(searchText)) {
+                    if (!container.contains(card)) {
+                        container.appendChild(card);
+                    }
+                } else {
+                    if (container.contains(card)) {
+                        container.removeChild(card);
+                    }
+                }
+            });
+        });
+        
+        class Slider {
+            constructor(rangeElement, valueElement, options) {
+                this.rangeElement = rangeElement;
+                this.valueElement = valueElement;
+                this.options = options;
+        
+                this.rangeElement.addEventListener('input', this.updateSlider.bind(this));
+            }
+        
+            init() {
+                this.rangeElement.setAttribute('min', this.options.min);
+                this.rangeElement.setAttribute('max', this.options.max);
+                this.rangeElement.value = this.options.cur;
+        
+                this.updateSlider();
+            }
+        
+            asMoney(value) {
+                return '$' + parseFloat(value)
+                    .toLocaleString('en-US', { maximumFractionDigits: 2 });
+            }
+        
+            generateBackground(rangeElement) {
+                if (this.rangeElement.value === this.options.min) {
+                    return;
+                }
+        
+                let percentage = (this.rangeElement.value - this.options.min) / (this.options.max - this.options.min) * 100;
+                return 'background: linear-gradient(to right, #6e9dc0, #6e9dc0 ' + percentage + '%, #DDE6ED ' + percentage + '%, #DDE6ED 100%)';
+            }
+        
+            updateSlider(newValue) {
+                this.valueElement.innerHTML = this.asMoney(this.rangeElement.value);
+                this.rangeElement.style = this.generateBackground(this.rangeElement.value);
+            }
+        }
+        
+        let rangeElement = document.querySelector('.range [type="range"]');
+        let valueElement = document.querySelector('.range .range__value span');
+        
+        let options = {
+            min: 200,
+            max: 7500,
+            cur: 3750
+        };
+        
+        if (rangeElement) {
+            let slider = new Slider(rangeElement, valueElement, options);
+        
+            slider.init();
+        }
+        
+    </script>
+</body>
+</html>
