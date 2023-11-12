@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sign.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <a name="login-section"></a>
+
+    <div class="cont-sign">
+        <form class="form">
+            <p class="title">Sign In</p>
+            <p class="message">Sign In to continue browsing on our website </p>
+            <label>
+                <input id="first" type="text" class="input" required>
+                <span>Name</span>
+            </label>
+            <label>
+                <input placeholder="" id="email" type="text" class="input" >
+                <span>Email</span>
+                <span class="error" id="error-email">
+                    Please enter a valid email
+                </span>
+            </label>
+            <label>
+                <input placeholder="" id="pass" type="password" class="input" required>
+                <span>Password</span>
+                <span class="error" id="error-pass">
+                    Please enter a password consisting of 8 letters, uppercase letters, and numbers
+                </span>
+            </label>
+            <button type="button" class="submit" id="Login">Sign In</button>
+            <p class="signin">Don't have an account? <a href="signup.html">Sign Up</a> </p>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>

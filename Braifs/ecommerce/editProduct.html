@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #back {
+            background-color: red;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+       
+    </style>
+    <title>Product Form</title>
+</head>
+<body>
+
+    <form action="#" method="post">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="desc">Description:</label>
+        <input type="text" id="desc" name="desc" required>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required>
+
+        <label for="discountedPrice">Price After Discount:</label>
+        <input type="number" id="discountedPrice" name="discountedPrice" required>
+
+        <label for="catType">Category Type:</label>
+        <select id="catType" name="catType" required>
+            <option value="Electronics">Silver</option>
+            <option value="Clothing">Gold</option>
+           
+            <!-- Add more options as needed -->
+        </select>
+        <label for="catType">Section:</label>
+        <select id="catType" name="catType" required>
+            <option value="Electronics">Men</option>
+            <option value="Clothing">Women</option>
+           
+            <!-- Add more options as needed -->
+        </select>
+
+        <button type="submit">Submit</button>
+       <a href="index.html"> <button type="submit" id="back">back</button></a>
+    </form>
+
+</body>
+</html>

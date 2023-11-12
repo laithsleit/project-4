@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="addtocart.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="img/Logo2.png" alt="">
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="#">Shop</a></li>
+                <li id="signup" ><a href="signup.html">Signup</a></li>
+                <li id="login" class="btn-login"><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div style="display: none;" class="header">
+        <p class="logo">LOGO</p>
+        <div class="cart"><i class="fa-solid fa-cart-shopping"></i><p id="count">0</p></div>
+    </div>
+    
+    <div style="margin-top: 50px;" class="container">
+        <div id="root">
+            <div class="box">
+                <div class="img-box">
+                  <img class="images" src="${product.image}" />
+                </div>
+                <div class="bottom">
+                  <p></p>
+                  <h2></h2>
+                  <button id="btn" onclick(window.location.href="addtocart.html#2")>
+                    <a  href="addtocart.html#${pro.product_id}">
+                      Add to cart
+                    </a>
+                  </button>
+                </div>
+              </div>
+        </div>
+        <div class="sidebar">
+            <div style="justify-content: space-between;" class="head"><p>My Cart</p>
+                <label style="display: flex; ">
+            <input type="search" style="font-size: 14px;" placeholder="Search Watch" id="search">
+        </label>
+        
+            </div>
+            <div id="cartItem">Your cart is empty</div>
+            <div class="foot">
+                <h3>Total</h3>
+                <h2 id="total">$ 0.00</h2>
+            </div>
+        </div>
+    </div>
+   
+    
+    <script src="addtocart.js"></script>
+</body>
+
+</html>

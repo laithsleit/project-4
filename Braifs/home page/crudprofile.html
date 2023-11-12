@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="crudprofile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="img/Logo2.png" alt="">
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="addtocart.html">Shop</a></li>
+                <li><a href="#">Signup</a></li>
+                <li class="btn-login"><a href="#">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <div class="left">
+                <img src="https://img.icons8.com/bubbles/100/000000/user.png" alt="User-Profile-Image">
+                <input type="file" id="imageInput" accept="image/*" onchange="changeImage()">
+            </div>
+            <div class="right">
+                <div class="user-name">
+                    <p><b>User Name :</b></p> <button type="button">Save</button>
+                </div>
+                
+                <input style="margin-bottom: 5px; border-radius: 3px; height: 30px;" type="text" placeholder="New Name">
+                <br>
+                <hr style="width: 80%;">
+                <p><b>Email :</b></p>
+                <br>
+                <p>allawi@gmail.com</p>
+                <hr style="width: 80%;">
+                <p><b>Password :</b></p>
+                <br>
+                <input style="margin-bottom: 5px; border-radius: 3px; height: 30px;" type="password" placeholder="New Password">
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeImage() {
+            var input = document.getElementById('imageInput');
+            var image = document.getElementById('userImage');
+
+            var file = input.files[0];
+
+            if (file) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    image.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="img/Logo2.png" alt="">
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="addtocart.html">Shop</a></li>
+                <li><a href="login.html">Signup</a></li>
+                <li class="btn-login"><a href="signup.html">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="root" class="container">
+
+    </div>
+    <script>
+        const cont = document.getElementById('root');
+
+        // Assuming you have a function to get the user ID from the session
+        const userId = sessionStorage.getItem('id');
+
+        // Fetch user information based on the user ID
+        fetch(`http://localhost/api/userread.php`, {
+            
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ "id": userId }),
+        })
+        .then(response => response.json())
+        .then(user => {
+           console.log(user);
+            // Update the HTML content with the fetched user information
+            cont.innerHTML = `
+                <div class="section">
+                    <div class="left">
+                        <img src="${user.image}" alt="User-Profile-Image">
+                    </div>
+                    <div class="right">
+                        <div class="user-name">
+                            <p><b>User Name :${user.username}</b></p> <a href="crudprofile.html"><button type="button">Edit</button></a>
+                        </div>
+                        <br>
+                        <p><b>Email :</b></p>
+                        <p>${user.email}</p>
+                        <hr style="width: 80%;">
+                        <p><b>Password :</b></p>
+                        <p>**********</p>
+                    </div>
+                </div>
+            `;
+        })
+        .catch(error => console.error('Error fetching user profile:', error));
+    </script>
+</body>
+
+</html>

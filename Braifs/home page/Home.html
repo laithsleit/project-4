@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Home.css">
+    <title>Document</title>
+
+    <style>
+        .nav-left i {
+            display: none;
+        }
+        @media (max-width:650px) {
+            .navbar {
+                height: auto;
+                align-items: center;
+                flex-direction: column;
+            }
+            .navbar ul{
+                flex-direction: column;
+                height: auto;
+                display: none;
+            }
+            .navbar li {
+                margin-top: 20px;
+            }
+            .nav-right {
+                height: auto;
+            }
+
+            .nav-left i {
+                display: block;
+                color: aliceblue;
+                background-color: #0a2a57;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+            .nav-left  {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+            }
+        #close {
+            display: none;
+        }
+       .main-text h2 {
+        font-size: 35px;
+        }
+        .main-text p { 
+            width: auto;
+            background-color: rgba(0, 0, 0, 0.453);
+        }
+        .main-text {
+            width: 100%;
+        }
+        }
+        footer {
+            overflow: hidden;
+        }
+        .product {
+            width: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+            border-radius: 15px;
+        }
+
+        .product:hover img {
+            transform: scale(1.06);
+        }
+
+        .product-info {
+            text-align: center;
+            margin-top: 15px;
+        }
+        /* .nav-left i {
+                display: none;
+            } */
+    </style>
+
+</head>
+
+<body>
+    <a name="home-section"></a>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="img/Logo2.png" alt="">
+            <i id="menu" class="fa-solid fa-bars"></i>
+            <i id="close" class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="nav-right">
+            <ul id="ul">
+                <li><a href="#">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="addtocart.html">Shop</a></li>
+                <li id="sigup"><a href="signup.html">Signup</a></li>
+                <li id="login" class="btn-login"><a href="login.html">Login</a></li>
+            </ul>
+            
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="main-text">
+            <h2>Welcome</h2>
+            <p>Step into a world where time is luxury and style is
+                universal. Our
+                boutique presents an exquisite collection of watches from renowned global brands, each piece a
+                testament to craftsmanship and elegance.</p>
+            <br>
+            <button><a href="#res">
+                    <span class="button_top" id="btn"> Show More
+                    </span>
+                </a>
+            </button>
+        </div>
+    </div>
+
+    <h2 id="res">Most Popular Collections</h2>
+    <br>
+    <p style="text-align: center; max-width: 1200px; margin: auto; ">
+        We proudly offer a curated selection of elegant and precise watches, showcasing a range from classic timepieces
+        honoring traditional craftsmanship to cutting-edge designs embodying modern innovation.</p>
+        <br>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="img/wallpaper.jpg" style="width:100%">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="img/wallpaper3.webp" style="width:100%">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="img/Time_center_Web_banner-01.webp" style="width:100%">
+            <div class="text">Caption Three</div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <h2>Best Watches</h2>
+    <p style="max-width: 1200px; margin: auto; text-align: center;">Our most popular and sought-after watches showcase
+        the epitome of style and sophistication. Explore our curated selection of highly coveted timepieces renowned for
+        their exceptional craftsmanship and enduring appeal.</p>
+    <div class="cards">
+        <div class="card1" id="card">
+            <div class="text-card">
+                <p class="text-watch">Rolex</p> <button> <a href="addtocart.html">
+                        <span class="button_top"> Shop Now
+                        </span>
+                    </a>
+                </button>
+            </div>
+        </div>
+        <div class="card2" id="card">
+            <div class="text-card">
+                <p class="text-watch">Rado</p> <button> <a href="addtocart.html">
+                        <span class="button_top"> Shop Now
+                        </span>
+                    </a>
+                </button>
+            </div>
+        </div>
+        <div class="card3" id="card">
+            <div class="text-card">
+                <p class="text-watch">Omega</p> <button> <a href="addtocart.html">
+                        <span class="button_top"> Shop Now
+                        </span>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section>
+        <div
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+        </div>
+        <h2>Watches Discounts</h2>
+        <p style="text-align: center; max-width: 1200px; margin: auto;">
+            Here you will find the best discounts on watches from multiple brands and the best prices and discount codes
+            and these watches that have a discount in our store I wish you to enjoy buying some types of watches that
+            have discounts that are under this text.
+        </p>
+        <div style="display: flex; align-items: center; justify-content: space-evenly; text-align: center;  margin-top: 25px;"
+            class="card-d" id="pprice">
+            <div class="product">
+                <img src="img/ck_w_2.webp" alt="">
+                <div class="product-info">
+                    <h3>Calvin Klein</h3>
+                    <p>Price: $1602</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/ck_m_3.webp" alt="">
+                <div class="product-info">
+                    <h3>Calvin Klein</h3>
+                    <p>Price: $422</p>
+                </div>
+            </div>
+
+            <div class="product">
+                <img src="img/v_m_5.webp" alt="">
+                <div class="product-info">
+                    <h3>Versace</h3>
+                    <p>Price: $6500</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletters</h4>
+            <p>Get-Email updates about our latest shop and <span>special offers </span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your Email Address  ">
+            <button class="normal">SignUp</button>
+        </div>
+    </section>
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/Logo3.png" alt="">
+            <h4>Contact</h4>
+            <p><Strong>Address:</Strong> 562 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone</strong>+01 222 365 / (+91) 01 2345 7891</p>
+            <p><strong>Hours</strong> 10:00 - 18:00, Mon - sat</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About Us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">SignIn</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Orders</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="img/app.jpg" alt="">
+                <img src="img/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="img/pay.png" alt="">
+        </div>
+        <div class="copyright">
+            <p>© 2023, Horologix - Ecommerce Website.</p>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+        let menu = document.getElementById('menu');
+        let list = document.getElementById('ul');
+
+        let closeMenu = document.getElementById('close');
+        menu.addEventListener('click', () => {
+            list.style.display = "flex"
+            closeMenu.style.display = "block"
+            menu.style.display = "none"
+        });
+        closeMenu.addEventListener('click', () => {
+            list.style.display = "none"
+            closeMenu.style.display = "none"
+            menu.style.display = "block"
+        });
+
+
+
+
+    function fetchComments() {
+    let maxCard = 0;
+    let id = sessionStorage.getItem('id');
+    const apiUrl = "http://localhost/api/product_read.php";
+
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+        const root = document.getElementById('pprice');
+        root.innerHTML = '';
+
+        for (const priceOOLD of data) {
+            const rootchild = document.createElement('div');
+            rootchild.className = 'product';
+            rootchild.innerHTML = `
+                
+                    <a href="watch.html?id=${priceOOLD.product_id}"> 
+                        <img src="img/omega.jpg" alt="">
+                    </a>
+                    <div class="product-info">
+                        <h3>${priceOOLD.name}</h3>
+                        <div style="display:flex; justify-content: space-between;">
+                            <p>Old Price: <del> ${priceOOLD.price} </del></p>
+                            <p>Price: ${priceOOLD.price_after_discount}</p>
+                        </div>
+                    </div>
+                </div>  
+            `;
+
+            root.appendChild(rootchild);
+            maxCard++;
+
+            if (maxCard === 3) {
+                break;
+            }
+        }
+    })
+    .catch(error => console.error('Error fetching comments:', error));
+}
+
+
+document.addEventListener('DOMContentLoaded', fetchComments);
+
+    
+    </script>
+</body>
+
+</html>

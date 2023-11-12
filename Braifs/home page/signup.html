@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sign.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <style>
+    </style>
+</head>
+<body>
+    <a name="signup-section"></a>
+    <div class="cont-sign">
+        <form class="form" id="signupForm">
+            <p class="title">Register</p>
+            <p class="message">Signup now and get full access to our app. </p>
+            <div class="flex">
+                <label>
+                    <input placeholder="" type="text" id="name" class="input">
+                    <span>username</span>
+                </label>
+            
+            </div>  
+            <label>
+                <input placeholder="" id="email" type="email" class="input">
+                <span>Email</span>
+                <span class="error" id="error-email">
+                    Please enter a valid email
+                </span>
+            </label> 
+            <label>
+                <input placeholder="" id="pass" type="password" class="input">
+                <span>Password</span>
+                <span class="error" id="error-pass">
+                    Please enter a password consisting of 8 letters, uppercase letters, and numbers
+                </span>
+            </label>
+            <label>
+                <input placeholder="" id="pass2" type="password" class="input">
+                <span>Confirm password</span>
+                <span class="error" id="error-pass2">
+                    Password does not match
+                </span>
+            </label>
+            <button type="button" class="submit" id="login-button" onclick="submitForm()">Submit</button>
+            <p class="signin">Already have an account? <a href="login.html">Sign in</a> </p>
+        </form>
+        <div id="msg"></div>
+    </div>
+    <script>
+        function submitForm() {
+            const formData = {
+                first: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                pass: document.getElementById('pass').value,
+                pass2: document.getElementById('pass2').value,
+                errorEmail: document.getElementById('error-email'),
+                errorPass: document.getElementById('error-pass'),
+                errorPass2: document.getElementById('error-pass2'),
+            };
+
+            if (formData.email.match(/[^\s@]+@[^\s@]+\.[^\s@]+/gi)) {
+                formData.errorEmail.style.display = "none";
+            } else {
+                formData.errorEmail.style.display = "block";
+            }
+
+            if (formData.pass.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)) {
+                formData.errorPass.style.display = "none";
+            } else {
+                formData.errorPass.style.display = "block";
+            }
+
+            if (formData.pass === formData.pass2) {
+                formData.errorPass2.style.display = "none";
+            } else {
+                formData.errorPass2.style.display = "block";
+            }
+
+            for (const key in formData) {
+                if (formData[key] === "") {
+                    document.getElementById(key).style.border = "1px solid red";
+                    return;
+                }
+            }
+        }
+    </script>
+    <script src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Category</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        #categoryForm {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Add Category</h1>
+        <form id="categoryForm">
+            <label for="categoryName">Category Name:</label>
+            <input type="text" id="categoryName" name="categoryName" required>
+            <button  type="submit">Add Category</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('categoryForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the category name from the form
+            const categoryName = document.getElementById('categoryName').value;
+
+            // Make a POST request to the server-side API endpoint
+            fetch('http://localhost/ecommerce/API1/category/post_category.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Specify the content type as JSON
+                },
+                body: JSON.stringify({
+                    category_name: categoryName,
+                }),
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Category added successfully:');
+             
+                   window.location.href = 'http://127.0.0.1:5500/inbox.html';
+                  
+    
+            })
+            .catch(error => {
+                console.error('Error adding category:', error);
+                // Optionally, you can handle errors, e.g., show an error message to the user
+            });
+        });
+    </script>
+</body>
+</html>
